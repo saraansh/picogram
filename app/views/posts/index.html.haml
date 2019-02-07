@@ -1,5 +1,12 @@
 %h1 Picogram
 
--@posts.each do |post|
-	=image_tag url_for(post.image)
-	=post.caption
+.posts-wrapper.row
+  -@posts.each do |post|
+    .post
+      .post-head
+        .name
+          Ben Walker
+      .image.center-block
+        =link_to (image_tag url_for(post.image)), post_path(post)
+      %p.caption
+        =post.caption
